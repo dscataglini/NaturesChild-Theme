@@ -187,12 +187,14 @@ a:hover{
 	background: url(images/bg_block.gif) top left repeat-x #DAD6CC;
 }
 
+.leader-2-columns #leader-container{
+	background: url(images/tail.gif) 50% top repeat-y;
+}
 
-
-#leader-container{
+.leader-3-columns #leader-container{
 	background: url(images/tail.gif) 33.33% top repeat-y;
 }
-#leader-container2{
+.leader-3-columns #leader-container2{
 	background: url(images/tail.gif) 66.66% top repeat-y;
 }
 
@@ -225,6 +227,7 @@ a:hover{
 #primary{
 	border: none;
 	padding: 0;
+	margin-bottom: 0;
 }
 
 #primary ul{
@@ -411,4 +414,14 @@ a.dark-green-btn:hover{
 	font-size: 13px;
 	padding: 8px;
 	margin-bottom: 0;
+}
+
+body.home .wpf-dev{
+  display: none
+}
+.home #content .sticky {
+	margin-top: 20px;
+}
+.widget_sp_image{
+  margin-bottom: 20px
 }

@@ -38,27 +38,42 @@
 
 
 // Add a widgetized aside just below the header
-function childtheme_leaderasides() { ?>
+function childtheme_leaderasides() { 
+   $cols = 0;
+   if(is_sidebar_active('1st-leader-aside')){
+     $cols = $cols + 1;
+   }
+   if(is_sidebar_active('2nd-leader-aside')){
+     $cols += 1;
+   }
+   if(is_sidebar_active('3rd-leader-aside')){
+     $cols += 1;
+   }
+   $yuiclass = 'yui3-u';
+   if($cols > 1){
+     $yuiclass = $yuiclass . '-1-' . $cols;
+   }
 
-    <?php if (is_home() && ( is_sidebar_active('1st-leader-aside') || is_sidebar_active('2nd-leader-aside') || is_sidebar_active('3rd-leader-aside') )) { // one of the leader asides has a widget ?>
-    <div id="leader">
+   
+   if (is_home() && $cols > 0) { // one of the leader asides has a widget ?>
+    <div id="leader" class="leader-<?php echo $cols ?>-columns">
         <div id="leader-container" class="yui3-g">
           <div id="leader-container2" class="yui3-g">
         
             <?php if ( function_exists('dynamic_sidebar') && is_sidebar_active('1st-leader-aside') ) { // there are active widgets for this aside
-                echo '<div id="first-leader" class="aside sub-aside yui3-u-1-3">'. "\n" . '<ul class="xoxo">' . "\n";
+                echo '<div id="first-leader" class="aside sub-aside '. $yuiclass  . '">'. "\n" . '<ul class="xoxo">' . "\n";
                 dynamic_sidebar('1st-leader-aside');
                 echo '</ul>' . "\n" . '</div><!-- #first-leader .aside -->'. "\n";
             } ?>                
         
             <?php if ( function_exists('dynamic_sidebar') && is_sidebar_active('2nd-leader-aside') ) { // there are active widgets for this aside
-                echo '<div id="second-leader" class="aside sub-aside yui3-u-1-3">'. "\n" . '<ul class="xoxo">' . "\n";
+                echo '<div id="second-leader" class="aside sub-aside '. $yuiclass  . '">'. "\n" . '<ul class="xoxo">' . "\n";
                 dynamic_sidebar('2nd-leader-aside');
                 echo '</ul>' . "\n" . '</div><!-- #second-leader .aside -->'. "\n";
             } ?>       
        
             <?php if ( function_exists('dynamic_sidebar') && is_sidebar_active('3rd-leader-aside') ) { // there are active widgets for this aside
-                echo '<div id="third-leader" class="aside sub-aside yui3-u-1-3">'. "\n" . '<ul class="xoxo">' . "\n";
+                echo '<div id="third-leader" class="aside sub-aside '. $yuiclass  . '">'. "\n" . '<ul class="xoxo">' . "\n";
                 dynamic_sidebar('3rd-leader-aside');
                 echo '</ul>' . "\n" . '</div><!-- #third-leader .aside -->'. "\n";
             } ?>        
