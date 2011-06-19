@@ -236,7 +236,6 @@ a:hover{
 	background: rgba(196, 214, 234, 0.3);
 	background-repeat: no-repeat;
 	background-position: left bottom;	
-	border-radius: 0 0 12px 0;
 	padding: 18px 0 131px;	
 	border: 1px solid rgb(204, 204, 204);
 }
