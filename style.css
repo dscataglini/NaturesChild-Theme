@@ -41,6 +41,7 @@ body{
 	background: #8eb65a  url(images/body-bkg.png) center top repeat-y;
 	background: #dee7c8  url(images/body-bkg2.png) center top repeat-y;
 	color: #453d2d;
+	font-family: arial, sans-serif;
 }
 #header{
 	position: relative;
@@ -261,7 +262,7 @@ p{
 	line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5{
+h1, h2, h3, h4, h5, #content .aside h3{
 	font-family: 'EB Garamond', georgia, arial, serif; 
 }
 
@@ -424,4 +425,16 @@ body.home .wpf-dev{
 }
 .widget_sp_image{
   margin-bottom: 20px
+}
+
+.home .FA_overall_container_ncschool .FA_featured_articles .FA_article p{
+	font-size: 13px;
+}
+
+.home .FA_overall_container_ncschool .FA_featured_articles .FA_article h2 a{
+	white-space: nowrap;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	display: block;
+	width: 100%;
 }
