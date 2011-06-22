@@ -73,7 +73,7 @@
   		/* Display name from widget settings if one was input. */
   		$current_page = "http://" . $_SERVER['HTTP_HOST']  . $_SERVER['REQUEST_URI'];
   		if ( $link && $link != $current_page)
-  			printf( '<a href="'. $link .'" class="button '. $style .'-btn">' . __('%1$s.', 'example') . '</a>' , $text );
+  			printf( '<a href="'. $link .'" class="button '. $style .'-btn">' . __('%1$s', 'example') . '</a>' , $text );
 
   		/* After widget (defined by themes). */
   		echo $after_widget;
